@@ -9,7 +9,9 @@ const {auth}=require("./middleware/auth.middleware")
 const app=express()
 app.use(cors())
 app.use(express.json())
-
+app.get("/",(req,res)=>{
+    res.send("Hello to home page")
+})
 
 app.use("/users",userRouter)
 app.use(auth)
